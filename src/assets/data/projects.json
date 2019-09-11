@@ -1,0 +1,50 @@
+[
+  {
+    "projectName": "Project A",
+    "jobsCount": 5,
+    "createdTime": "2019/07/18 10:30",
+    "jobTypes": "Ingestion"
+  },
+  {
+    "projectName": "Project B",
+    "jobsCount": 4,
+    "createdTime": "2019/07/18 11:30",
+    "jobTypes": "Ingestion, Metadata"
+  },
+  {
+    "projectName": "Project C",
+    "jobsCount": 2,
+    "createdTime": "2019/07/18 12:30",
+    "jobTypes": "Ingestion, Processing"
+  },
+  {
+    "projectName": "Project D",
+    "jobsCount": 5,
+    "createdTime": "2019/07/18 13:30",
+    "jobTypes": "Ingestion"
+  },
+  {
+    "projectName": "Project E",
+    "jobsCount": 6,
+    "createdTime": "2019/07/18 14:30",
+    "jobTypes": "Ingestion, Metadata, Processing"
+  },
+  {
+    "projectName": "Project F",
+    "jobsCount": 4,
+    "createdTime": "2019/07/18 15:30",
+    "jobTypes": "Ingestion"
+  },
+  {
+    "projectName": "Project G",
+    "jobsCount": 3,
+    "createdTime": "2019/07/18 16:30",
+    "jobTypes": "Ingestion, Metadata"
+  },
+  {
+    "projectName": "Project H",
+    "jobsCount": 5,
+    "createdTime": "2019/07/18 17:30",
+    "jobTypes": "Ingestion"
+  }
+]

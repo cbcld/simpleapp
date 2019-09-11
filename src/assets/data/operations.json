@@ -1,0 +1,642 @@
+{
+	"operations": [{
+			"operation_name": "Read File",
+			"op_class": "create_dataframe",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "File Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "file_path",
+					"parameter": "File Location",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "file_schema",
+					"parameter": "File Location (Schema)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "schema",
+					"parameter": "File Name (Schema)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "file_format",
+					"parameter": "File Format",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "has_header",
+					"parameter": "Header Included",
+					"op_value": "dropdown",
+					"dropdown_values": ["True", "False"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "enable_merge",
+					"parameter": "Enable Merge",
+					"op_value": "dropdown",
+					"dropdown_values": ["True", "False"],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Select Field",
+			"op_class": "select_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "columns",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimeter",
+					"parameter": "Delimeter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Rename Field",
+			"op_class": "rename_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "old_columns",
+					"parameter": "Old Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "new_columns",
+					"parameter": "New Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimeter",
+					"parameter": "Delimeter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Drop Field",
+			"op_class": "drop_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "columns",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimeter",
+					"parameter": "Delimeter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Cleanup Field",
+			"op_class": "cleanup_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "columns",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimeter",
+					"parameter": "Delimeter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Joiner",
+			"op_class": "join_dataset",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name (Master Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "dataframe_keys",
+					"parameter": "Joining Keys (Master Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "join_dataframe_name",
+					"parameter": "Dataset Name (Detailed Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "join_dataframe_keys",
+					"parameter": "Joining Keys (Detailed Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "dataframe_columns",
+					"parameter": "Select Columns (Master Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "join_dataframe_columns",
+					"parameter": "Select Columns (Detailed Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "rename_dataframe_columns",
+					"parameter": "Revised Names (Master Dataset)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "rename_join_dataframe_columns",
+					"parameter": "Revised Names (Detailed Dataset)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "delimiter",
+					"parameter": "Delimiter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				},
+				{
+					"op_tag": "join_type",
+					"parameter": "Join Type",
+					"op_value": "dropdown",
+					"dropdown_values": ["inner", "outer", "left outer", "right outer", "full outer", "leftsemi", "rightsemi"],
+					"required": "y"
+				},
+				{
+					"op_tag": "filter_clause",
+					"parameter": "Filter Condition (Master Dataset)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "filter_join_dataframe",
+					"parameter": "Filter Condition (Detailed Dataset)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "result_dataframe",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		}, {
+			"operation_name": "Write to File",
+			"op_class": "write_file",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "file_path",
+					"parameter": "File Location",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "file_format",
+					"parameter": "File Format",
+					"op_value": "dropdown",
+					"dropdown_values": ["parquet", "csv"],
+					"required": "y"
+				},
+				{
+					"op_tag": "write_mode",
+					"parameter": "Write Mode",
+					"op_value": "dropdown",
+					"dropdown_values": ["append", "overwrite"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "distinct",
+					"parameter": "Data Distinct",
+					"op_value": "dropdown",
+					"dropdown_values": ["TRUE", "FALSE"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "single_file ",
+					"parameter": "Target As Single File",
+					"op_value": "dropdown",
+					"dropdown_values": ["TRUE", "FALSE"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "save_as_table",
+					"parameter": "Save to Hive Table",
+					"op_value": "dropdown",
+					"dropdown_values": ["TRUE", "FALSE"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "database_name",
+					"parameter": "Database Name",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "table_name",
+					"parameter": "Table Name",
+					"op_value": "text",
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Add Field",
+			"op_class": "add_column",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "column_name",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "expression",
+					"parameter": "Expresion",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "result_dataframe ",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		{
+			"operation_name": "Create Surrogate Key",
+			"op_class": "add_sk",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "column_name",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "result_dataframe ",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		{
+			"operation_name": "Union Data",
+			"op_class": "union_df",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name(First Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "second_dataframe_name",
+					"parameter": "Dataset Name(Second Dataset)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "result_dataframe ",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		{
+			"operation_name": "Write to XML",
+			"op_class": "to_xml",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "file_path",
+					"parameter": "File Location",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		{
+			"operation_name": "Filter",
+			"op_class": "filter_rows",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "filter_clause",
+					"parameter": "Filter Condition",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		{
+			"operation_name": "Concat Fields",
+			"op_class": "concat_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "input_columns",
+					"parameter": "Concat Columns",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "output_columns",
+					"parameter": "Result Column",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "sub_delimiter",
+					"parameter": "Data Delimiter (within Column)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "separator",
+					"parameter": "Column Separator",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "result_dataframe",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "delimiter",
+					"parameter": "Data Delimiter (Output)",
+					"op_value": "text",
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Transform Field",
+			"op_class": "transform_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "columns",
+					"parameter": "Column Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimeter",
+					"parameter": "Delimiter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				},
+				{
+					"op_tag": "expression",
+					"parameter": "Expression",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "function",
+					"parameter": "Functon Call",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "params",
+					"parameter": "Function Paramter",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "options",
+					"parameter": "Optional Prameter",
+					"op_value": "text",
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Coalesce",
+			"op_class": "coalesce_columns",
+			"input_fields": [{
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "input_columns",
+					"parameter": "Coalesce Columns",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "output_columns",
+					"parameter": "Result Column",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "sub_delimiter",
+					"parameter": "Data Delimiter (within Column)",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "result_dataframe",
+					"parameter": "Output Dataset Name",
+					"op_value": "text",
+					"required": "optional"
+				},
+				{
+					"op_tag": "delimiter",
+					"parameter": "Delimiter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "optional"
+				}
+			]
+		},
+		{
+			"operation_name": "Window Function",
+			"op_class": "window_func",
+			"input_fields": [{	
+					"op_tag": "dataframe_name",
+					"parameter": "Dataset Name (Source)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "column_name",
+					"parameter": "Column Name (Return Value)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "partition_column_name",
+					"parameter": "Column Name (Partition By)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "delimiter",
+					"parameter": "Delimiter",
+					"op_value": "dropdown",
+					"dropdown_values": ["|", ","],
+					"required": "y"
+				},
+				{
+					"op_tag": "order_column_name",
+					"parameter": "Column Name (Order By)",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "window_function_name",
+					"parameter": "Function Name",
+					"op_value": "dropdown",
+					"dropdown_values": ["rank", "rownumber"],
+					"required": "y"
+				},
+				{
+					"op_tag": "result_dataframe",
+					"parameter": "Dataset Name (Output)",
+					"op_value": "text",
+					"required": "y"
+				}
+			]
+		},
+		
+		{
+			"operation_name": "RedShift Copy",
+			"op_class": "redshift_copy",
+			"input_fields": [{	
+					"op_tag": "COPY",
+					"parameter": "table name and schema where data needs to be copied",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "FROM",
+					"parameter": "S3 path from where file needs to be copied",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "FORMAT",
+					"parameter": "file format in s3",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "save_as_table",
+					"parameter": "TRUE/FALSE for table creation",
+					"op_value": "dropdown",
+					"dropdown_values": ["True", "False"],
+					"required": "optional"
+				},
+				{
+					"op_tag": "dataframe_name",
+					"parameter": "dataset name",
+					"op_value": "text",
+					"required": "y"
+				},
+				{
+					"op_tag": "table_name",
+					"parameter": "table name in redshift if needs to be created",
+					"op_value": "dropdown",
+					"dropdown_values": ["rank", "rownumber"],
+					"required": "y"
+				}
+			]
+		}
+		
+	]
+}

@@ -1,0 +1,72 @@
+{
+  "response": {
+    "status": "Success",
+    "jobs": [
+      {
+        "jobId": "#1222",
+        "metaData": [
+          {
+            "columnName": "First Name",
+            "columnType": "varchar",
+            "columnLength": 50
+          },
+          {
+            "columnName": "Last Name",
+            "columnType": "varchar",
+            "columnLength": 30
+          },
+          {
+            "columnName": "ID",
+            "columnType": "int",
+            "columnLength": 50
+          },
+          {
+            "columnName": "UserName",
+            "columnType": "varchar",
+            "columnLength": 30
+          },
+          {
+            "columnName": "Team Name",
+            "columnType": "varchar",
+            "columnLength": 50
+          },
+          {
+            "columnName": "Last Login",
+            "columnType": "time",
+            "columnLength": 30
+          }
+        ]
+      },
+      {
+        "jobId": "#4444",
+        "metaData": [
+          {
+            "columnName": "ID",
+            "columnType": "int",
+            "columnLength": 50
+          },
+          {
+            "columnName": "UserName",
+            "columnType": "varchar",
+            "columnLength": 30
+          }
+        ]
+      },
+      {
+        "jobId": "#8944",
+        "metaData": [
+          {
+            "columnName": "Team Name",
+            "columnType": "varchar",
+            "columnLength": 50
+          },
+          {
+            "columnName": "Last Login",
+            "columnType": "time",
+            "columnLength": 30
+          }
+        ]
+      }
+    ]
+  }
+}
