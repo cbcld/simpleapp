@@ -1,5 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource, PageEvent } from '@angular/material';
+import { Router } from '@angular/router';
+
+interface Project {
+  productName: string;
+  updated_date: string;
+  assetType: string;
+  views: number
+}
 
 @Component({
   selector: 'app-data-product',
@@ -7,63 +15,107 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./data-product.component.scss']
 })
 export class DataProductComponent {
+  search: string;
+  projectsList: Project[];
+  projectsData: any;
+  projectsDataClone: any;
+  isHidden: boolean;
+  noResults: boolean;
+  noProjects: boolean;
+  length: number;
+  pageIndex = 0;
+  pageSize = 10;
+  pageSizeOptions = [10, 20, 25, 100];
+  pageEvent: PageEvent;
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+  filters = ['All', 'Data Product Name', 'Product Type', 'Asset Type', 'Tags'];
+  sortingOrder = ['Alphabetical', 'Recently Added', 'Recently Updated', 'Most Accessed', 'Certified'];
+
+  selectedBrand: 'All';
+  selectedDate: string = 'all';
+  selectedOrderBy: string = 'Alphabetical';
+
+  tmp: boolean = false;
+
+  constructor(private router: Router) { }
 
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor() {
-    // Create 100 users
-    const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  OnPageChange(e) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.loadData(this.pageIndex, this.pageSize);
   }
 
-  /**
-   * Set the paginator and sort after the view init since this component will
-   * be able to query its view for the initialized paginator and sort.
-   */
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  loadData(pageIndex, pageSize) {
+    const startIndex = pageIndex * pageSize;
+    let endIndex = startIndex + pageSize;
+    this.length = this.projectsData.length;
+    this.hasResults();
+    if (endIndex > this.length) {
+      endIndex = this.length;
+    }
+    this.projectsList = this.projectsData.slice(startIndex, endIndex);
   }
 
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+  getJobsList(project) {
+    //  localStorage.setItem('projectJobList', JSON.stringify(project.projectId));
+    this.router.navigate(['home/jobs']);
   }
-}
 
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+  getUserProjectsList() {
+    this.projectsData = [
+      { productName: "LC3", updated_date: "Jan 01, 2018", assetType: "Dataset", views: "100" },
+      { productName: "PCP", updated_date: "Jan 02, 2018", assetType: "API", views: "10" },
+      { productName: "Reltio", updated_date: "Jan 02, 2019", assetType: "Tableau Report", views: "60" },
+      { productName: "LC3", updated_date: "Jan 01, 2019", assetType: "Dataset", views: "70" },
+      { productName: "LC3", updated_date: "Mar 06, 2019", assetType: "API", views: "80" },
+      { productName: "Reltio", updated_date: "Jan 01, 1980", assetType: "API", views: "100" },
+      { productName: "PCP", updated_date: "May 01, 2019", assetType: "Dataset", views: "120" },
+      { productName: "PCP", updated_date: "Jan 01, 1980", assetType: "Dataset", views: "100" },
+      { productName: "PCP", updated_date: "Jan 01, 1980", assetType: "Tableau Report", views: "100" },
+      { productName: "LC3", updated_date: "Jan 01, 1980", assetType: "Dataset", views: "100" },
+      { productName: "Reltio", updated_date: "Jan 01, 1980", assetType: "API", views: "100" }];
 
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
-}
 
-/** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+    this.projectsData.sort((a, b) =>
+      a.projectId > b.projectId ? -1 : 1
+    );
+    this.projectsDataClone = this.projectsData;
+    this.length = this.projectsData.length;
+    if (this.length > 0) {
+      this.noProjects = false;
+    }
+    this.loadData(this.pageIndex, this.pageSize);
 
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
+  }
+
+  filteredList() {
+    this.projectsData = this.projectsDataClone.filter(project =>
+      project.productName.toLowerCase().includes(this.search.toLowerCase())
+    );
+    this.loadData(this.pageIndex, this.pageSize);
+  }
+
+  hasResults() {
+    if (this.projectsData.length === 0) {
+      this.noResults = true;
+    } else {
+      this.noResults = false;
+      this.isHidden = false;
+    }
+  }
+
+  ngOnInit() {
+    this.projectsData = [];
+    this.isHidden = true;
+    this.noResults = true;
+    this.noProjects = true;
+    this.getUserProjectsList();
+  }
+
+  getProductDetails(product) {
+    this.router.navigate(['home/productDetails']);
+
+  }
+
 }
