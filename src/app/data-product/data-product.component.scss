@@ -1,0 +1,74 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  .job-wrapper {
+    div.btn-group {
+      float: right;
+      margin: 2vh 8vh;
+
+      .btnColor {
+        background-color: #3a9ad1;
+        cursor: pointer;
+      }
+    }
+
+    div.back-btn {
+      float: left;
+    }
+
+    .mb10 {
+      margin-bottom: 10px;
+    }
+
+    .middle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .shrug {
+      font-size: 72px;
+    }
+
+    width: 100%;
+
+    .cardHeight {
+      min-height: calc(100vh - 182px);
+    }
+
+    table {
+      width: 100%;
+
+      .fa {
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+    th {
+      font-size: 15px;
+    }
+
+    th.mat-sort-header-sorted {
+      color: black;
+    }
+  }

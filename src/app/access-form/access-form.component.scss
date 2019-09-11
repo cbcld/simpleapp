@@ -1,0 +1,54 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .example-container > * {
+    width: 100%;
+  }
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .example-radio-button {
+    margin: 5px;
+  }
+
+  .project-wrapper {
+    width: 100%;
+
+    .form-group label {
+      float: left;
+      margin-top: 1vh;
+    }
+  }
+
+  .borderBox {
+    width: 100%;
+    height: 333px;
+    border: 1px solid #80808085;
+    border-radius: 10px;
+    overflow: auto;
+  }
+
+  .dropdown-wrapper,
+.input-wrapper {
+  margin-bottom: 1vh;
+
+  label {
+    float: left;
+    margin-top: 8px;
+  }
+
+  select,
+  input {
+    width: 65%;
+    float: right;
+  }
+}
+
+.margin {
+  margin-left: 16px;
+}
