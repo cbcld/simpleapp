@@ -1,6 +1,7 @@
 <mat-toolbar class="mat-elevation-z4 bgcolor" style="z-index:2">
   <mat-toolbar-row>
-    <span class="app-name" color="primary">Data MarketPlace</span>
+    <img src="assets/Image/Lily.PNG" class="wp7">
+    <span class="app-name bgcolor">Data Market Place</span>
     <span class="fill-space"></span>
     <button mat-icon-button class="icon-space" matTooltip="Cart">
       <mat-icon>shopping_cart</mat-icon>
@@ -14,7 +15,8 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer fixedInViewport="false" fullscreen class="sidenav mat-elevation-z2"
+  <!--
+<mat-sidenav #drawer fixedInViewport="false" fullscreen class="sidenav mat-elevation-z2"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
     <mat-nav-list>
@@ -27,6 +29,8 @@
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
+  -->
+
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

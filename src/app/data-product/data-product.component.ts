@@ -86,6 +86,12 @@ export class DataProductComponent {
       this.noProjects = false;
     }
     this.loadData(this.pageIndex, this.pageSize);
+    //}
+    //else if(res['response']['message'] === 'No projects found') {
+    //this.isHidden = false;
+    ////this.noResults = true;
+    // this.noProjects = true;
+    //}
 
   }
 

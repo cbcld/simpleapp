@@ -3,22 +3,23 @@
     <div class="wp100" [style.visibility]="showSpinner ? 'visible' : 'hidden'">
       <mat-progress-bar class="tn16px" mode="indeterminate"></mat-progress-bar>
     </div>
-    <mat-card-title>Data MarketPlace</mat-card-title>
+    <mat-card-title>Data Market Place</mat-card-title>
     <mat-card-content>
       <mat-form-field class="wp100" appearance="outline">
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" name="username" formControlName="username" required>
-        <mat-icon matSuffix color="primary">account_circle</mat-icon>
+        <mat-icon matSuffix style="color: rgba(213,43,30,0.85)">account_circle</mat-icon>
       </mat-form-field>
       <mat-form-field class="wp100" appearance="outline">
         <mat-label>Password</mat-label>
         <input matInput placeholder="Password" type="password" name="password" formControlName="password" required>
-        <mat-icon matSuffix [ngStyle]="{'color': '#4caf50'}">fingerprint</mat-icon>
+        <mat-icon matSuffix [ngStyle]="{'color': 'rgba(213,43,30,0.85)'}" style="color: rgba(213,43,30,0.85)">
+          fingerprint</mat-icon>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button class="wp100" [ngStyle]="{'background-color': '#003152','color':'#FFF'}" type="submit"
-        (click)="login()">Login</button>
+      <button mat-raised-button class="wp100" [ngStyle]="{'background': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+        type="submit" (click)="login()">Login</button>
     </mat-card-actions>
   </mat-card>
 </form>

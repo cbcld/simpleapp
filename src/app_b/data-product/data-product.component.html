@@ -1,0 +1,148 @@
+<section class="project-wrapper">
+  <mat-card class="cardHeight">
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-3" style="margin-top:7%">
+          <div class="form-group">
+            <label for="brand_select">Filters:</label>
+            <div class="dropdownBorderBox">
+              <select id="productName" name="productName"
+                class="col-md-2 matb-select mat-form form-control colorful-select dropdown-primary dropdownMargin">
+                <option value="" selected name="option" ngDefaultControl ngModel>
+                  Data Product Name
+                </option>
+                <option value="redshift">LC3</option>
+                <option value="postgress">PCP</option>
+                <option value="oracle">Reltio</option>
+              </select>
+              <select id="productType" name="productType"
+                class="matb-select mat-form form-control colorful-select dropdown-primary dropdownMargin">
+                <option value="" selected name="option" ngDefaultControl ngModel>
+                  Product Type
+                </option>
+                <option value="redshift">JSON</option>
+                <option value="postgress">CSV</option>
+                <option value="oracle">PDF</option>
+              </select>
+              <select id="assetType" name="assetType"
+                class="matb-select mat-form form-control colorful-select dropdown-primary dropdownMargin">
+                <option value="" selected name="option" ngDefaultControl ngModel>
+                  Asset Type
+                </option>
+                <option value="redshift">Dataset</option>
+                <option value="postgress">API</option>
+                <option value="oracle">Tableau Report</option>
+              </select>
+              <select id="productName" name="productName"
+                class="matb-select mat-form form-control colorful-select dropdown-primary" style="margin-bottom: 5px;">
+                <option value="" selected name="option" ngDefaultControl ngModel>
+                  Tags
+                </option>
+                <option value="redshift">Tag 1</option>
+                <option value="postgress">Tag 2</option>
+                <option value="oracle">Tag 3</option>
+              </select>
+            </div>
+          </div>
+          <!--
+<div class="form-group">
+            <label for="brand_select">Last Modified:</label>
+            <mat-radio-group aria-label="Select an option" class="cb-wrapper borderBox"
+              [ngClass]="{'cb-vertival': !tmp }" [(ngModel)]="selectedDate">
+              <mat-radio-button class="radioMargin" value="all" checked=”checked”>All</mat-radio-button>
+              <mat-radio-button class="radioMargin" value="week">This Week</mat-radio-button>
+              <mat-radio-button class="radioMargin" value="month">This Month</mat-radio-button>
+              <mat-radio-button class="radioMargin" value="quarter">This Quarter</mat-radio-button>
+              <mat-radio-button class="radioMargin" value="year">This Year</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          -->
+
+        </div>
+        <div class="col-md-9">
+          <mat-form-field class="search-field" appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput type="search" placeholder="Search Data Product" [(ngModel)]="search"
+              (input)="filteredList()">
+            <mat-icon matSuffix color="primary">search</mat-icon>
+          </mat-form-field>
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <mat-chip-list aria-label="Fish selection">
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 1</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 2</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 3</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 4</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 5</mat-chip>
+              </mat-chip-list>
+            </div>
+            <!--
+<div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <div style="display: flex;justify-content: flex-end;">
+                    <label for="orderBy" style="width: 13%">Order By:</label>
+                    <div class="col-sm-5">
+                      <select class="form-control" name="" id="orderBy" [(ngModel)]="selectedOrderBy">
+                        <option *ngFor="let order of sortingOrder" [ngValue]="order">
+                          {{order}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            -->
+
+
+          </div>
+          <mat-card class="mat-elevation-z2 m45 cardHht"
+            *ngFor="let project of projectsList">
+            <mat-card-header>
+              <div mat-card-avatar class="project-header-image"></div>
+              <mat-card-title><span class="project-title"
+                  (click)="getProductDetails(project)">{{ project.productName }}</span><br>
+                <p style="font-weight: 300">A Product Specification is a document that provides critical defining
+                  information about a product
+                  and
+                  can include identification of the manufacturer; a list of rules</p><br>
+                <mat-chip-list aria-label="Fish selection">
+                  <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 1</mat-chip>
+                  <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 2</mat-chip>
+                  <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 3</mat-chip>
+                </mat-chip-list>
+              </mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+              <table class="wp100">
+                <tbody>
+                  <tr>
+                    <td class="col-md-2" align="right"><b>Updated On:</b></td>
+                    <!--
+  <td class="w20 pl10">{{project.updated_date}}</td>
+                    <td class="wp13" align="right"><b>Views:</b></td>
+                    <td class="w20 pl10">{{project.views}}</td>
+                    <td class="wp20" align="right"><b>Asset Type:</b></td>
+                    <td class="w20 pl10">{{project.assetType}}</td>
+                    -->
+                    <td class="col-md-2 p01">{{project.updated_date}}</td>
+                    <td class="col-md-2" align="right"><b>Views:</b></td>
+                    <td class="col-md-2 p01">{{project.views}}</td>
+                    <td class="col-md-2" align="right"><b>Asset Type:</b></td>
+                    <td class="col-md-2 p01">{{project.assetType}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+          <br>
+          <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            [hidden]="noResults" [showFirstLastButtons]="true" (page)="OnPageChange($event)">
+          </mat-paginator>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

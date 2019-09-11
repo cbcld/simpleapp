@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { SearchDasboardComponent } from './search-dasboard/search-dasboard.component';
 import { AccessFormComponent } from './access-form/access-form.component';
 import { DataProductComponent } from './data-product/data-product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'dataProduct',
         component: DataProductComponent
+      },
+      {
+        path: 'productDetails',
+        component: ProductDetailsComponent
       }
     ]
   }

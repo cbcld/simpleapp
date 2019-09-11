@@ -5,6 +5,7 @@ import {
   HttpClient,
   HttpClientModule
 } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 import {
   MatButtonModule,
@@ -57,6 +58,7 @@ import { SearchDasboardComponent } from './search-dasboard/search-dasboard.compo
 import { AccessFormComponent } from './access-form/access-form.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { DataProductComponent } from './data-product/data-product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,8 @@ import { DataProductComponent } from './data-product/data-product.component';
     LoaderComponent,
     SearchDasboardComponent,
     AccessFormComponent,
-    DataProductComponent
+    DataProductComponent,
+    ProductDetailsComponent
   ],
   imports: [
     TextFieldModule,
@@ -105,7 +108,8 @@ import { DataProductComponent } from './data-product/data-product.component';
     MatGridListModule,
     MatSortModule,
     NgbModule,
-    MatRadioModule
+    MatRadioModule,
+    SharedModule
   ],
   providers: [
     {
