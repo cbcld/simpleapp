@@ -77,8 +77,6 @@ section {
 $fa-font-path: "../node_modules/font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 
-@import './custom-theme';
-
 .mat-card-header-text {
   width: 100% !important;
 }
