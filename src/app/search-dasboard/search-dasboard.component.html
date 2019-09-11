@@ -1,40 +1,32 @@
 <div class="parent-class">
   <div class="login-form">
-    <!--
- <mat-form-field class="search-field" [hidden]="isHidden" *ngIf="!noProjects" align="center" appearance="outline"
+    <mat-form-field class="search-field"  align="center" appearance="outline"
       style="background: white;margin-bottom: -2%;padding-bottom: 0.10em;">
       <mat-label>Search</mat-label>
-      <input matInput type="search" placeholder="Search" [(ngModel)]="search" (input)="filteredList()">
+      <input matInput type="search" placeholder="Search" [(ngModel)]="search">
       <mat-icon matSuffix color="primary">search</mat-icon>
-    </mat-form-field>
-    -->
-
-    <mat-form-field class="search-field" appearance="outline">
-      <mat-label>Search</mat-label>
-      <input matInput type="search" placeholder="Search" [(ngModel)]="search" (input)="filteredList()">
-      <mat-icon matSuffix style="color: rgba(213,43,30,0.85)">search</mat-icon>
     </mat-form-field>
   </div>
 </div>
 <div style="margin-top:2%; margin-left:5%" align="center">
-  <button mat-raised-button class="btnColor" (click)="openDataProduct()">
+  <button mat-raised-button color="primary" (click)="openDataProduct()">
     Data Product
   </button>
-  <button mat-raised-button class="btnColor" style="margin-left:1%">
+  <button mat-raised-button color="primary" style="margin-left:1%">
     Data Product Acess
   </button>
-  <button mat-raised-button class="btnColor" style="margin-left:1%">
+  <button mat-raised-button color="primary" style="margin-left:1%">
     New Data Product Request
   </button>
-  <button mat-raised-button class="btnColor" style="margin-left:1%">
+  <button mat-raised-button color="primary" style="margin-left:1%">
     Saved Data Product
   </button>
-  <button mat-raised-button class="btnColor" style="margin-left:1%">
+  <button mat-raised-button color="primary" style="margin-left:1%">
     Other Services
   </button>
 </div>
 <div style="margin-top:2%;margin-left: 2%;">
-  <mat-card class="col-md-4 cardHeight">
+  <mat-card class="col-md-4">
     <mat-card-header class="header">
       <mat-card-title>Quick Access</mat-card-title>
     </mat-card-header>
@@ -42,7 +34,7 @@
       <p>This displays data for quick access</p>
     </mat-card-content>
   </mat-card>
-  <mat-card class="col-md-3 cardHeight" style="margin-left:1%">
+  <mat-card class="col-md-3" style="margin-left:1%">
     <mat-card-header class="header">
       <mat-card-title>Most Used Data Products</mat-card-title>
     </mat-card-header>
@@ -51,7 +43,7 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="col-md-4 cardHeight" style="margin-left:1%">
+  <mat-card class="col-md-4" style="margin-left:1%">
     <mat-card-header class="header">
       <mat-card-title>Recently Onboarded Data Products</mat-card-title>
     </mat-card-header>
