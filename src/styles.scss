@@ -25,6 +25,8 @@ $ng7-pre-theme: mat-light-theme($ng7-pre-primary, $ng7-pre-accent, $ng7-pre-warn
 // that you are using.
 @include angular-material-theme($ng7-pre-theme);
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 /* You can add global styles to this file, and also import other style files */
 
 html,
