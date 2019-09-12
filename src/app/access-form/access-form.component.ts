@@ -8,16 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AccessFormComponent implements OnInit {
   person: string;
   items: string[] = ['Myself', 'Working Group'];
-  product: "";
-  cartProduct: "";
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  submit() {
-    console.log("submit clicked");
   }
 
 }

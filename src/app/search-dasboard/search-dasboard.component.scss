@@ -33,4 +33,38 @@
 
   .mat-form-field-wrapper {
     padding-bottom: 0 !important;
+    background-color: white;
 }
+
+.btnColor {
+  background: rgba(213,43,30,0.85);
+  color:white;
+}
+
+/*.mat-form-field-appearance-outline .mat-form-field-outline {
+  display: flex;
+  position: absolute;
+  top: .25em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-color: white;
+}*/
+
+.mat-input-element {
+  caret-color:rgba(213,43,30,0.85);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(213,43,30,0.85);
+}
+
+.mat-form-field {
+  background-color: white !important;
+}
+
+.cardHeight {
+  min-height: calc(50vh - 258px);
+}
+
