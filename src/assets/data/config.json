@@ -1,22 +1,6 @@
 [
   {
-    "appName": "Augmented Data Lake Framework",
-    "login": {
-      "username": "abc",
-      "password": "xyz"
-    },
-    "source": {
-      "location": "/opt/sourceFolder"
-    },
-    "destination": {
-      "targets3": "s3://targetBucket",
-      "username": "abc",
-      "password": "xyz"
-    },
-    "database": {
-      "url": "mysql://localhost:3306/dbname",
-      "dbUsername": "admin",
-      "dbPassword": "admin"
-    }
+    "EDCUrl": "https://www.google.com",
+    "AxonUrl": "https://www.google.com"
   }
 ]

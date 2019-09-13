@@ -1,0 +1,191 @@
+<section class="project-wrapper">
+  <mat-card class="cardHeight">
+    <mat-card-content>
+      <div class="col-md-12">
+        <div class="col-md-2" style="font-size: 96px; color:rgba(213,43,30,0.85) ">
+          <i class="fa fa-cubes fa-7x"></i>
+        </div>
+        <div class="col-md-10">
+          <mat-list>
+            <mat-list-item><b>LC3</b></mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+          <br>
+          <p>This dataset describes drug poisoning deaths at the county level by selected demographic characteristics
+            and includes age-adjusted death rates for drug poisoning from 1999 to 2015.</p><br>
+          <!--
+          <div> <label>View Sample Data &nbsp; </label>
+            <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+              type="submit">
+              Explore</button></div>
+         -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <form>
+          <div class="col-md-3">
+            <div class="border">
+              <div class="form-group">
+                <label for="brand_select">Want to view this data? </label><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit"> Request Access</button>
+              </div>
+              <div class="form-group">
+                <label for="brand_select">Like this data Product?</label><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit">Add to Favourites</button><br><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit">Share with colleagues</button>
+              </div>
+              <div class="form-group">
+                <label for="brand_select">Do you want to see more data?</label><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit">Enterprise Data Catalog</button><br><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit">Axon</button>
+              </div>
+              <div class="form-group">
+                <label for="brand_select">Are you the data owner?</label><br>
+                <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
+                  type="submit">Make Announcement</button>
+              </div>
+            </div>
+            <div><br>
+              <label for="brand_select">Comments:</label>
+              <div class="border">
+                <div class="form-group">
+                  <label for="brand_select">User Name:</label> xyz<br>
+                  <label for="brand_select">Date:</label>Aug 06, 2019<br>
+                  <p>This is used for showing comment by user.</p>
+                </div>
+                <div class="form-group" style="padding-left: 37px;">
+                  <label for="brand_select">Data Owner:</label> Admin<br>
+                  <label for="brand_select">Date:</label>Aug 06, 2019<br>
+                  <p>Owner replied to user's comment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+        <div class="col-md-6">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  About this Product
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="col-md-12">
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Created Date" formControlName="Jan 01, 2019">Jan 01, 2019
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Last Updated Date">Oct 01, 2019
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Data Source">EDC
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Created By">Admin
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Frequency of Data Refresh">4
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Permissions">Yes
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Path">edc/Lc3 </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Resource Type">JSON
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Size">146
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                  <input matInput placeholder="Object Type">JSON
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  What's in this Data Product
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <table class="col-md-12">
+                <caption align="center">Columns: 3</caption>
+                <tr>
+                  <th class="col-md-3">Column</th>
+                  <th class="col-md-3">Description</th>
+                  <th class="col-md-3">Data Type</th>
+                </tr>
+                <tr>
+                  <td>January</td>
+                  <td>This needs to be added</td>
+                  <td>Json</td>
+                </tr>
+                <tr>
+                  <td>February</td>
+                  <td>This needs to be added</td>
+                  <td>Json</td>
+                </tr>
+              </table>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="col-md-3">
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Tags
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-chip-list aria-label="Fish selection">
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 1</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 2</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 3</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 4</mat-chip>
+                <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 5</mat-chip>
+              </mat-chip-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Activity
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="col-md-12">
+                <span class="col-md-12"><b>Community Rating: </b><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i></span><br>
+                <span class="col-md-12"><b>Your Rating:</b><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i></span></div>
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Related Items
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              In Progress
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

@@ -1,0 +1,52 @@
+<section class="project-wrapper">
+
+  <mat-card class="col-md-10">
+    <mat-card-title>Data Product Access Form</mat-card-title>
+    <mat-card-content>
+      <div class="form-row">
+        <div>
+          <label id="example-radio-group-label">Request Access For</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="person">
+            <mat-radio-button class="example-radio-button" *ngFor="let item of items" [value]="item">
+              {{item}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="example-container borderBox">
+          <div class="row dropdown-wrapper">
+            <div class="col-md-12">
+              <label id="example-radio-group-label" class="margin">Request Access For Data Product</label>
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="product" class="margin">Select Data Product:</label>
+              <select [(ngModel)]="product" name="product"
+                class="matb-select mat-form form-control colorful-select dropdown-primary">
+                <option value="" disabled selected>
+                  Select Data Product
+                </option>
+                <option value="p1">Product 1</option>
+                <option value="p2">Product 2</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="cartProduct">Product from Cart:</label>
+              <select id="cartProduct" name="cartProduct"
+                class="matb-select mat-form form-control colorful-select dropdown-primary col-md-6"
+                [(ngModel)]="cartProduct">
+                <option value="" disabled selected>
+                  Product from Cart
+                </option>
+                <option value="p1">Product 1</option>
+                <option value="p2">Product 2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button align="end" class="wp100" color=primary type="submit" (click)="submit()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</section>

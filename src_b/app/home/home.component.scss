@@ -1,0 +1,58 @@
+.sidenav-container {
+  min-height: calc(100vh - 64px);
+}
+
+.sidenav-container .mat-drawer.mat-drawer-side {
+  background: #8080801f;
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+.sidenav {
+  min-width: 200px;
+  background: #FFF;
+}
+
+.icon-space {
+  margin: 0 2.5px;
+}
+
+.active-tab,
+.mat-list-item:hover {
+  background: #03a9f4 !important;
+  color: white;
+
+  img {
+    filter: invert(100%);
+  }
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.app-name {
+  cursor: pointer;
+  margin-left:32%;
+}
+
+.w25px {
+  width: 25px;
+}
+
+.mr16px {
+  margin-right: 16px
+}
+
+.bgcolor {
+background: rgba(213,43,30,0.85);
+color:white;
+}
+
+.wp7{
+  width: 7%;
+}
+
+
