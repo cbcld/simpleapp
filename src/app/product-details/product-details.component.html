@@ -62,21 +62,6 @@
                   type="submit"> Request Access</button>
               </div>
             </div>
-            <div><br>
-              <label for="brand_select">Comments:</label>
-              <div class="border">
-                <div class="form-group">
-                  <label for="brand_select">User Name:</label> xyz<br>
-                  <label for="brand_select">Date:</label>Aug 06, 2019<br>
-                  <p>This is used for showing comment by user.</p>
-                </div>
-                <div class="form-group" style="padding-left: 37px;">
-                  <label for="brand_select">Data Owner:</label> Admin<br>
-                  <label for="brand_select">Date:</label>Aug 06, 2019<br>
-                  <p>Owner replied to user's comment.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
         </form>
@@ -85,7 +70,7 @@
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  About this Product
+                  <b>About this Product</b>
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="col-md-12">
@@ -123,7 +108,7 @@
             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  What's in this Data Product
+                  <b>What's in this Data Product</b>
                 </mat-panel-title>
 
               </mat-expansion-panel-header>
@@ -146,11 +131,92 @@
                 </tr>
               </table>
             </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <b>Comments</b>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div>
+                    <mat-form-field class="col-md-9">
+                      <textarea matInput class="form-control" name="cmtName" [(ngModel)]="cmtName"
+                        placeholder="Enter your comment"></textarea>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3" style="margin-top: 2%">
+                    <button class="lilyColor btn" (click)="addComment()">Add</button>
+                  </div>
+                </div>
+                <br><br>
+
+
+                <h4>User's Comments</h4>
+
+                <div class="actionBox">
+                  <div class="commentList">
+                    <div *ngFor="let cmt of comments">
+                      <div class="col-md-12" style="margin:2px">
+                        <div class="col-md-6">
+                          <i class="material-icons" style="vertical-align: middle;color: red;">account_circle
+                          </i>&nbsp; <b>{{cmt.user}}</b>
+                        </div>
+                        <div class="date sub-text col-md-6">
+                          {{cmt.date}}
+                        </div>
+                      </div>
+                      <div class="col-md-12" style="margin-top: 12px; margin-left: 3%;">
+                        <div class="commentText">
+                          <p> {{ cmt.comment }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="cmtAdded">
+                      <div>
+                        <div class="col-md-12" style="margin:2px">
+                          <div class="col-md-6">
+                            <i class="material-icons" style="vertical-align: middle; color: red;">account_circle
+                            </i>&nbsp; <b>Admin</b>
+                          </div>
+                          <div class="date sub-text col-md-6">
+                            17/09/2019
+                          </div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 12px; margin-left: 3%;">
+                          <div class="commentText">
+                            <p> {{commentsAdded}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!--
+                  <table class="wp100" *ngFor="let cmt of comments">
+                  <tbody>
+                    <tr>
+                      <td><i class="material-icons">account_circle</i><b>{{cmt.user}}</b></td>
+                      <td>Date: {{cmt.date}}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ cmt.comment }}</td>
+                      <td *ngIf="cmtAdded"> {{commentsAdded}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                -->
+
+
+              </div>
+            </mat-expansion-panel>
           </mat-accordion>
         </div>
         <div class="col-md-3">
           <mat-accordion>
-            <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Tags

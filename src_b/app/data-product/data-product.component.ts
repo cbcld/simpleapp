@@ -96,9 +96,16 @@ export class DataProductComponent {
   }
 
   filteredList() {
-    this.projectsData = this.projectsDataClone.filter(project =>
-      project.productName.toLowerCase().includes(this.search.toLowerCase())
+    this.projectsData = this.projectsDataClone.filter(
+      project =>
+        project.productName.toLowerCase().includes(this.search.toLowerCase())
     );
+    if (this.projectsData == null || this.projectsData == '') {
+      this.projectsData = this.projectsDataClone.filter(
+        project =>
+          project.assetType.toLowerCase().includes(this.search.toLowerCase())
+      );
+    }
     this.loadData(this.pageIndex, this.pageSize);
   }
 

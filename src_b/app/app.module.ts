@@ -46,11 +46,9 @@ import { HttpLoaderInterceptor } from './providers/interceptors/httpLoader.inter
 import { LayoutModule } from '@angular/cdk/layout';
 import { LoaderComponent } from './providers/shared-components/loader/loader.component';
 import { LoginComponent } from './login/login.component';
-import { MetadataService } from './providers/services/metadata.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationComponent } from './providers/shared-components/notification/notification.component';
 import { NotificationService } from './providers/services/notification.service';
-import { SearchDetailService } from './providers/services/search-detail.service';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { loaderService } from './providers/services/loader.service';
 import { restApiService } from './providers/services/restApi.service';
@@ -123,8 +121,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       useClass: HttpLoaderInterceptor
     },
     restApiService,
-    MetadataService,
-    SearchDetailService,
     NotificationService,
     loaderService
   ],

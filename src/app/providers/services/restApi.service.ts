@@ -38,6 +38,10 @@ export class restApiService {
     return this.http.get('/assets/data/config.json');
   }
 
+  getComments() {
+    return this.http.get('/assets/data/comment.json');
+  }
+
   /**
    getImportJsonData(data) {
      let params = new HttpParams();
