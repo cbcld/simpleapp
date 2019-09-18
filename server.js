@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+var nodemailer = require('nodemailer');
 
 app.listen(process.env.PORT || 3000);
 
@@ -19,33 +20,33 @@ res.sendFile(path.join(__dirname+'/dist/demo-deploy/index.html'));
 
 console.log('running node js');
 
-
-var Request = require("request");
-var user = 'LLYMME\C291410'
-var pass = 'Johnwick16'
-var result = [];
-var response = [];
-
-let options = {
-        url: "https://eicinfdev.am.lilly.com:9185/access/2/catalog/data/objects",
-        //url:"https://api.bitbucket.org/2.0/hook_events",
-        method: "GET",
-        proxy:"http://proxy.gtm.lilly.com:9000",
-        headers: {'Accept':'*/*','Content-Type': '*/*'},
-        auth: { username: user, password: pass },
-        qs: {
-            q: "EDB_Raw",
-            offset: 0,
-            pageSize: 20,
-              
-        }
-        
-        
-   
-        
+var transporter = nodemailer.createTransport({
+    host: "smtp-mail.outlook.com", // hostname
+    secureConnection: false, // TLS requires secureConnection to be false
+    port: 587, // port for secure SMTP
+    tls: {
+       ciphers:'SSLv3'
+    },
+    auth: {
+        user: 'jayasingh6@deloitte.com',
+        pass: 'Demanding@21'
     }
-    
-    Request(options,(err,res2,body)  => {
-        console.log(body);
-        
-    });
+});
+
+// setup e-mail data, even with unicode symbols
+var mailOptions = {
+    from: 'jayasingh6@deloitte.com', // sender address (who sends)
+    to: 'jayasingh6@deloitte.com, bbaraiya@deloitte.com', // list of receivers (who receives)
+    subject: 'Hello ', // Subject line
+    text: 'Hello world ', // plaintext body
+    html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+};
+
+// send mail with defined transport object
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+
+    console.log('Message sent: ' + info.response);
+});
