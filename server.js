@@ -4,6 +4,16 @@ const path = require('path');
 
 const app = express();
 var nodemailer = require('nodemailer');
+import * as auth from 'cirrus-oidc-auth-module';
+
+auth.authenticate(app);
+
+/** other express middleware goes here **/
+...
+/* */
+
+// if you want to access routes without authenticating (webhooks, files for a web worker)
+auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
 
 app.listen(process.env.PORT || 3000);
 
