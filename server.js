@@ -32,7 +32,7 @@ var transporter = nodemailer.createTransport({
 // setup e-mail data, even with unicode symbols
 var mailOptions = {
     from: 'jaya21591@gmail.com', // sender address (who sends)
-    to: 'jaya21591@gmail.com', // list of receivers (who receives)
+    to: 'jaya21591@gmail.com, jayasingh6@deloitte.com' // list of receivers (who receives)
     subject: 'Hello ', // Subject line
     text: 'Hello world ', // plaintext body
     html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
