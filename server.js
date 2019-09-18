@@ -5,13 +5,13 @@ const path = require('path');
 
 const app = express();
 var nodemailer = require('nodemailer');
-//var auth = require('cirrus-oidc-auth-module');
+//const auth = require('cirrus-oidc-auth-module');
 
 app.listen(process.env.PORT || 3000);
 
-auth.authenticate(app);
+//auth.authenticate(app);
 
-auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
+//auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/demo-deploy'));
