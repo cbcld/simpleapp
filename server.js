@@ -1,7 +1,7 @@
 //Install express server
+import * as auth from 'cirrus-oidc-auth-module';
 const express = require('express');
 const path = require('path');
-import * as auth from 'cirrus-oidc-auth-module';
 
 const app = express();
 var nodemailer = require('nodemailer');
