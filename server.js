@@ -1,11 +1,16 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+import * as auth from 'cirrus-oidc-auth-module';
 
 const app = express();
 var nodemailer = require('nodemailer');
 
 app.listen(process.env.PORT || 3000);
+
+auth.authenticate(app);
+
+auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/demo-deploy'));
