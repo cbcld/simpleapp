@@ -21,12 +21,8 @@ res.sendFile(path.join(__dirname+'/dist/demo-deploy/index.html'));
 console.log('running node js');
 
 var transporter = nodemailer.createTransport({
-    host: "smtp-gmail.com", // hostname
-    secureConnection: false, // TLS requires secureConnection to be false
-    port: 587, // port for secure SMTP
-    tls: {
-       ciphers:'SSLv3'
-    },
+    service: 'gmail',
+    
     auth: {
         user: 'jaya21591@gmail.com',
         pass: 'Highdemand@21'
