@@ -56,3 +56,10 @@ transporter.sendMail(mailOptions, function(error, info){
 });
   res.send('Message sent for'+ productName);
 })
+
+app.use((req, res, next) => {
+  const user = req.session.passport.user;
+  console.log(`UserID: ${user.sub}`);
+  console.log(`Access token: ${user.access_token}`);
+  next();
+})
