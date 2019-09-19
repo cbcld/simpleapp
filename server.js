@@ -1,9 +1,11 @@
 //Install express server
+
 const express = require('express');
 const path = require('path');
+
 const app = express();
 var nodemailer = require('nodemailer');
-//var auth = require('cirrus-oidc-auth-module');
+//const {auth} = require('cirrus-oidc-auth-module');
 
 app.listen(process.env.PORT || 3000);
 
@@ -18,6 +20,9 @@ app.get('/*', function(req,res) {
     
 res.sendFile(path.join(__dirname+'/dist/demo-deploy/index.html'));
 });
+
+// Start the app by listening on the default Heroku port
+
 
 console.log('running node js');
 
@@ -50,4 +55,3 @@ transporter.sendMail(mailOptions, function(error, info){
 });
   res.send('Message sent for'+ productName);
 })
-

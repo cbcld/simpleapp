@@ -43,7 +43,7 @@ export class restApiService {
   }
 
   sendMail() {
-    return this.http.get('https://localhost:3200/api/sendmail');
+    return this.http.get('http://127.0.0.1:3000/api/sendmail');
   }
 
 
