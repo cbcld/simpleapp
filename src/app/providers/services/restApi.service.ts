@@ -41,6 +41,10 @@ export class restApiService {
   getComments() {
     return this.http.get('/assets/data/comment.json');
   }
+  
+   sendMail() {
+    return this.http.get('http://127.0.0.1:3000/api/sendmail');
+  }
 
   sendMail() {
     return this.http.get('http://127.0.0.1:3000/api/sendmail');
