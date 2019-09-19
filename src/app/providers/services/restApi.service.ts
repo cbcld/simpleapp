@@ -46,9 +46,6 @@ export class restApiService {
     return this.http.get('http://127.0.0.1:3000/api/sendmail');
   }
 
-  sendMail() {
-    return this.http.get('http://127.0.0.1:3000/api/sendmail');
-  }
 
 
 
