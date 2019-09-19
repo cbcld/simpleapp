@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 var nodemailer = require('nodemailer');
-const auth = require('cirrus-auth-module');
+const auth = require('cirrus-oidc-auth-module');
 
 app.listen(process.env.PORT || 3000);
 
