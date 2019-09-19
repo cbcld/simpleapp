@@ -42,6 +42,12 @@ export class restApiService {
     return this.http.get('/assets/data/comment.json');
   }
 
+  sendMail() {
+    return this.http.get('https://localhost:3200/api/sendmail');
+  }
+
+
+
   /**
    getImportJsonData(data) {
      let params = new HttpParams();

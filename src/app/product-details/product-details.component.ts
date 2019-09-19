@@ -72,9 +72,27 @@ export class ProductDetailsComponent implements OnInit {
     //}
   }
 
-
-
-
-
-
+  sendMail() {
+    this.restApi.sendMail().subscribe(res => {
+      console.log(res);
+      this.restApi.alertService({
+        msg: 'Message send successfully',
+        type: 'alert-error'
+      });
+    },
+      err => {
+        this.restApi.alertService({
+          msg: 'Oops! Something went wrong. Please try again later.',
+          type: 'alert-error'
+        });
+      }
+    )
+  }
 }
+
+
+
+
+
+
+

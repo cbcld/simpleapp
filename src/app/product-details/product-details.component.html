@@ -44,7 +44,7 @@
               <div class="form-group">
                 <label for="brand_select">Like this data Product?</label><br>
                 <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
-                  type="submit">Share with colleagues</button><br><br>
+                  type="submit" (click)="sendMail()">Share with colleagues</button><br><br>
                 <button mat-raised-button [ngStyle]="{'background-color': 'rgba(213,43,30,0.85)','color':'#FFF'}"
                   type="submit">Add to Favourites</button>
 
