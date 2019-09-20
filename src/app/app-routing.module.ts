@@ -12,7 +12,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home/search',
     pathMatch: 'full'
   },
   {
