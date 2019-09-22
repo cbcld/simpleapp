@@ -59,7 +59,10 @@ transporter.sendMail(mailOptions, function(error, info){
 
 app.use((req, res, next) => {
   const user = req.session.passport.user;
+	console.log('inside OIDC token');
   console.log(`UserID: ${user.sub}`);
   console.log(`Access token: ${user.access_token}`);
+console.log('token from OIDC is' : ${user.access_token}`);
+
   next();
 })

@@ -41,7 +41,7 @@ export class HomeComponent {
   }
 
   logout() {
-    this.router.navigate(['https://login.microsoftonline.com/18a59a81-eea8-4c30-948a-d8824cdc2580']);
+    window.location.href='https://login.microsoftonline.com/18a59a81-eea8-4c30-948a-d8824cdc2580';
     /*
     this.restApi.logout(this.userId).subscribe(
       data => {
