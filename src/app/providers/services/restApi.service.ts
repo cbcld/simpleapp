@@ -41,9 +41,17 @@ export class restApiService {
   getComments() {
     return this.http.get('/assets/data/comment.json');
   }
-  
-   sendMail() {
+
+  sendMail() {
     return this.http.get('/api/sendmail');
+  }
+
+  logout() {
+    return this.http.get('/api/logout');
+  }
+
+  userDetails() {
+    return this.http.get('/api/useridEndpoint');
   }
 
 
