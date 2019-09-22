@@ -64,12 +64,12 @@ transporter.sendMail(mailOptions, function(error, info){
   console.log(`Access token: ${user.access_token}`);
     });
 	
-	app.route.get('/logout', (req, res) => {
+	app.route('/logout').get((req, res) => {
  	req.session.destroy();
  	res.send('signed out');
  	});
 
-app.route.get('/useridEndpoint', (req, res) => {
+app.route('/useridEndpoint').get((req, res) => {
  	const userid = (req.user || {}).sub || 'no-authenticated-user';
  	 
  	res.json({
