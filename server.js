@@ -6,6 +6,7 @@ var cors = require('cors');
 const app = express();
 var nodemailer = require('nodemailer');
 const auth = require('cirrus-oidc-auth-module');
+const bodyparser = require("body-parser");
 app.use(cors());
 
 app.listen(process.env.PORT || 3000);
