@@ -2,10 +2,11 @@
 
 const express = require('express');
 const path = require('path');
-
+var cors = require('cors');
 const app = express();
 var nodemailer = require('nodemailer');
 const auth = require('cirrus-oidc-auth-module');
+app.use(cors());
 
 app.listen(process.env.PORT || 3000);
 
@@ -15,6 +16,8 @@ auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/demo-deploy'));
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
 
 app.get('/*', function (req, res) {
 
@@ -27,8 +30,8 @@ app.get('/*', function (req, res) {
 console.log('running node js');
 
 
-app.get('/api/sendmail', function (req, res) {
-    const productName = req.params['name'];
+app.get("/api/sendmail", function (req, res) {
+    //const productName = req.params['name'];
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
@@ -54,7 +57,7 @@ app.get('/api/sendmail', function (req, res) {
 
         console.log('Message sent: ' + info.response);
     });
-    res.send('Message sent for' + productName);
+    res.send('Message sent');
 })
 
 app.get('/', function (req, res, next) {
