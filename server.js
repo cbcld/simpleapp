@@ -27,7 +27,7 @@ res.sendFile(path.join(__dirname+'/dist/demo-deploy/index.html'));
 console.log('running node js');
 
 
-app.route('/api/sendmail').get((req, res) => {
+app.get('/api/sendmail', function((req, res){
   const productName = req.params['name'];
   var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -64,13 +64,13 @@ transporter.sendMail(mailOptions, function(error, info){
   console.log(`Access token: ${user.access_token}`);
     });
 	
-	app.get('/logout' , function(req, res) => {
+	app.get('/logout' , function(req, res) {
 	console.log('inside logout');
  	req.session.destroy();
  	res.send('signed out');
  	});
 
-app.get('/useridEndpoint', function(req, res) => {
+app.get('/useridEndpoint', function(req, res) {
 	console.log('inside endpoint');
  	const userid = (req.user || {}).sub || 'no-authenticated-user';
  	 
