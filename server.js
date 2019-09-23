@@ -31,7 +31,7 @@ app.get('/*', function (req, res) {
 console.log('running node js');
 
 
-app.get("/api/sendmail", function (req, res) {
+app.post("/api/sendmail", function (req, res) {
     //const productName = req.params['name'];
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
