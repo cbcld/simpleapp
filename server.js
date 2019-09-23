@@ -56,11 +56,11 @@ app.post("/api/sendmail", function (req, res) {
             console.log(error);
             return console.log(error);
         }
-
-        console.log('Message sent: ' + info.response);
+		else {
+			console.log('Message sent: ' + info.response);
+		}        
     });
 
-    res.send('Message sent');
 })
 
 app.get('/', function (req, res, next) {
