@@ -53,7 +53,6 @@ app.post("/api/sendmail", function (req, res) {
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error);
             return console.log(error);
         }
 		else {

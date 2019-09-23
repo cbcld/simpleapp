@@ -80,14 +80,15 @@ export class ProductDetailsComponent implements OnInit {
         msg: 'Message send successfully',
         type: 'alert-error'
       });
-    },
-      err => {
+    }
+      /*err => {
         console.log("error form send mail", err);
         this.restApi.alertService({
           msg: 'Oops! Something went wrong. Please try again later.',
           type: 'alert-error'
         });
       }
+      */
     )
   }
 }
