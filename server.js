@@ -57,19 +57,21 @@ transporter.sendMail(mailOptions, function(error, info){
   res.send('Message sent for'+ productName);
 })
 
- app.route('/', function(req, res, next) {
+ app.get('/', function(req, res, next) {
       const user = req.session.passport.user;
     console.log('inside OIDC token');
    console.log(`UserID: ${user.sub}`);
   console.log(`Access token: ${user.access_token}`);
     });
 	
-	app.route('/logout').get((req, res) => {
+	app.get('/logout' , function(req, res) => {
+	console.log('inside logout');
  	req.session.destroy();
  	res.send('signed out');
  	});
 
-app.route('/useridEndpoint').get((req, res) => {
+app.get('/useridEndpoint', function(req, res) => {
+	console.log('inside endpoint');
  	const userid = (req.user || {}).sub || 'no-authenticated-user';
  	 
  	res.json({
