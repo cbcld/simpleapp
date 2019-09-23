@@ -43,8 +43,8 @@ export class restApiService {
   }
 
   sendMail() {
-    return this.http.get('/api/sendmail');
-	
+    return this.http.post('/api/sendmail', { responseType: 'text' });
+
   }
 
   logout() {
