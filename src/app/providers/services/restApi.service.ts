@@ -44,6 +44,7 @@ export class restApiService {
 
   sendMail() {
     return this.http.get('/api/sendmail');
+	
   }
 
   logout() {

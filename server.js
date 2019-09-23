@@ -53,11 +53,13 @@ app.get("/api/sendmail", function (req, res) {
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
+            console.log(error);
             return console.log(error);
         }
 
         console.log('Message sent: ' + info.response);
     });
+
     res.send('Message sent');
 })
 
