@@ -92,7 +92,7 @@ export class DataProductComponent {
   }
 
   getProductData() {
-    this.restApi.getProductData().subscribe(res => {
+    this.restApi.getProductData("com.infa.ldm.file.json.JSONFile").subscribe(res => {
       console.log(res);
       this.productJson = res;
       this.restApi.alertService({

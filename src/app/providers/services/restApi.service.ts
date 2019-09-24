@@ -46,8 +46,8 @@ export class restApiService {
     return this.http.get('http://127.0.0.1:3200/api/sendmail');
   }
 
-  getProductData() {
-    return this.http.get('http://127.0.0.1:3200/api/dataProduct');
+  getProductData(productName) {
+    return this.http.get('http://127.0.0.1:3200/api/dataProduct' + productName);
   }
 
   logout() {
