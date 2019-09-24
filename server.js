@@ -3,7 +3,7 @@ const path = require('path');
 var cors = require('cors');
 const app = express();
 var nodemailer = require('nodemailer');
-const auth = require('cirrus-oidc-auth-module');
+//const auth = require('cirrus-oidc-auth-module');
 const bodyparser = require("body-parser");
 const { gatewayRequest } = require('cirr-gateway-service');
 var Request = require("request");
@@ -19,9 +19,9 @@ app.use(cors());
 
 app.listen(process.env.PORT || 3000);
 
-auth.authenticate(app);
+//auth.authenticate(app);
 
-auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
+//auth.ignore(['/api/contentful/hook', '/public/bundle.js']);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/demo-deploy'));
