@@ -55,9 +55,9 @@ export class restApiService {
     return this.http.get('/api/logout');
   }
 
-  userDetails() {
+  /*userDetails() {
     return this.http.get('/api/useridEndpoint');
-  }
+  }*/
 
 
 
