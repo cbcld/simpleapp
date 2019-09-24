@@ -16,7 +16,7 @@ var response = [];
 var file_names = []
 app.use(cors());
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3200);
 
 //auth.authenticate(app);
 
@@ -104,7 +104,7 @@ app.use((req, res, next) => {
 
 //app.route('/api/cats/:assettype').get((req, res) => {
 app.get('/api/dataProduct/:assettype', function (req, res) {
-	console.log("inside data product api");
+    console.log("inside data product api");
 
     const myfunction = async function () {
         let uri = '/edc/access/2/catalog/data/objects?q=' + req.params.assettype
