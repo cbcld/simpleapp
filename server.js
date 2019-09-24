@@ -117,11 +117,11 @@ app.get('/api/dataProduct/:assettype', function (req, res) {
             method: 'GET', // This is the HTTP Verb of the request. (POST, GET, PATCH)
             headers: { 'Accept': '*/*', 'Content-Type': '*/*' } // If you have to pass through any headers, include them here.
         };
-        const certificate2 = {
-            key: fs.readFileSync('datamarketplace.key', 'utf8'), // This is the private key used, when creating the Certifcate.
-            cert: fs.readFileSync('datamarketplace.clientapp.lilly.com.cer', 'utf8'), // This is the client certificate from Venafi.
-            passphrase: 'zHXhBGVH42ELjfhr' // This is the passphrase used when creating the client certificate.
-        };
+        const certificate2 = {
+        key: process.env.KEY, // This is the private key used, when creating the Certifcate.
+        cert: process.env.CERT, // This is the client certificate from Venafi.
+          passphrase: process.env.PASSPHRASE // This is the passphrase used when creating the client certificate.
+};
         const authInfo2 = user + ':' + pass
         const see_ot = await gatewayRequest(options2, certificate2, null, authInfo2, null, null, null)
         return see_ot
