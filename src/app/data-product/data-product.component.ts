@@ -99,13 +99,7 @@ export class DataProductComponent {
         msg: 'Message send successfully',
         type: 'alert-error'
       });
-    },
-      err => {
-        this.restApi.alertService({
-          msg: 'Oops! Something went wrong. Please try again later.',
-          type: 'alert-error'
-        });
-      }
+    }
     )
   }
 
