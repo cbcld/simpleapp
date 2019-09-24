@@ -103,7 +103,7 @@ app.use((req, res, next) => {
 })
 
 //app.route('/api/cats/:assettype').get((req, res) => {
-app.get('/api/dataProduct/:assettype', function (req, res) {
+app.post('/api/dataProduct/:assettype', function (req, res) {
     console.log("inside data product api");
 
     const myfunction = async function () {

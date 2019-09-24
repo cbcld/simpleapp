@@ -47,8 +47,8 @@ export class restApiService {
   }
 
   getProductData(productName) {
-   // return this.http.get('http://127.0.0.1:3200/api/dataProduct/' + productName);
-	 return this.http.get('/api/dataProduct/' + productName);
+    // return this.http.get('http://127.0.0.1:3200/api/dataProduct/' + productName);
+    return this.http.post('/api/dataProduct/', productName);
   }
 
   logout() {
