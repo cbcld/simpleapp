@@ -43,8 +43,11 @@ export class restApiService {
   }
 
   sendMail() {
-    return this.http.post('/api/sendmail', { responseType: 'json' });
+    return this.http.get('http://127.0.0.1:3200/api/sendmail');
+  }
 
+  getProductData() {
+    return this.http.get('http://127.0.0.1:3200/api/dataProduct');
   }
 
   logout() {

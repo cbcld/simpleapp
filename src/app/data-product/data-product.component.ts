@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource, PageEvent } from '@angular/material';
 import { Router } from '@angular/router';
+import { restApiService } from '../providers/services/restApi.service';
 
 interface Project {
   productName: string;
@@ -36,8 +37,9 @@ export class DataProductComponent {
   selectedOrderBy: string = 'Alphabetical';
 
   tmp: boolean = false;
+  productJson: Object;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private restApi: restApiService) { }
 
 
   OnPageChange(e) {
@@ -86,13 +88,25 @@ export class DataProductComponent {
       this.noProjects = false;
     }
     this.loadData(this.pageIndex, this.pageSize);
-    //}
-    //else if(res['response']['message'] === 'No projects found') {
-    //this.isHidden = false;
-    ////this.noResults = true;
-    // this.noProjects = true;
-    //}
+    this.getProductData();
+  }
 
+  getProductData() {
+    this.restApi.getProductData().subscribe(res => {
+      console.log(res);
+      this.productJson = res;
+      this.restApi.alertService({
+        msg: 'Message send successfully',
+        type: 'alert-error'
+      });
+    },
+      err => {
+        this.restApi.alertService({
+          msg: 'Oops! Something went wrong. Please try again later.',
+          type: 'alert-error'
+        });
+      }
+    )
   }
 
   filteredList() {

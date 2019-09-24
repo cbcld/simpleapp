@@ -10,13 +10,26 @@ import { restApiService } from '../providers/services/restApi.service';
 export class ProductDetailsComponent implements OnInit {
   panelOpenState = false;
   selectedValue: any;
-
+  cmtName: any;
+  comments: any[] = [];
+  cmtAdded: boolean = false;
+  commentsAdded: any[] = [];
   constructor(private router: Router, private restApi: restApiService) {
 
   }
 
   ngOnInit() {
+    this.loadComment();
   }
+
+  loadComment() {
+    this.restApi.getComments().subscribe(res => {
+      res['comments'].forEach(comment => {
+        this.comments.push(comment);
+      });
+    });
+  }
+
 
   countStar(star) {
     this.selectedValue = star;
@@ -40,7 +53,49 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
+  addComment() {
+    this.cmtAdded = true;
+    if (this.cmtName != '') {
+      //let obj = {
+      //  user: "admin",
+      ////product: "LC3",
+      // date: "17/09/2019",
+      ////  comment: this.cmtName
+      //  }
+      this.commentsAdded.push(this.cmtName);
+      console.log(this.commentsAdded);
+      this.cmtName = "";
+    }
 
+    // var post_cmt = function ($home) {
+    // this.comments.splice($home, 1);
+    //}
+  }
 
-
+  sendMail() {
+    this.restApi.sendMail().subscribe(res => {
+      console.log("response from email id");
+      console.log(res);
+      this.restApi.alertService({
+        msg: 'Message send successfully',
+        type: 'alert-error'
+      });
+    }
+      /*err => {
+        console.log("error form send mail", err);
+        this.restApi.alertService({
+          msg: 'Oops! Something went wrong. Please try again later.',
+          type: 'alert-error'
+        });
+      }
+      */
+    )
+  }
 }
+
+
+
+
+
+
+

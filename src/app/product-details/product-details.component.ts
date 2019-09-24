@@ -74,21 +74,18 @@ export class ProductDetailsComponent implements OnInit {
 
   sendMail() {
     this.restApi.sendMail().subscribe(res => {
-      console.log("response from email id");
       console.log(res);
       this.restApi.alertService({
         msg: 'Message send successfully',
         type: 'alert-error'
       });
-    }
-      /*err => {
-        console.log("error form send mail", err);
+    },
+      err => {
         this.restApi.alertService({
           msg: 'Oops! Something went wrong. Please try again later.',
           type: 'alert-error'
         });
       }
-      */
     )
   }
 }

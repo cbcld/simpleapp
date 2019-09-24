@@ -49,6 +49,9 @@
               <mat-chip><i class="fa fa-tags" aria-hidden="true"></i> Tag 5</mat-chip>
             </mat-chip-list>
           </div>
+
+          {{productJson}}
+          {{productJson.Path}}
           <mat-card class="mat-elevation-z2 m45 cardHht"
             *ngFor="let project of projectsList | filterByBrand: selectedBrand">
             <mat-card-header>

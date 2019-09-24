@@ -34,6 +34,7 @@ export class HomeComponent {
     //this.user = this.restApi.username;
     this.errorMessage = '';
     // this.router.navigate(['home/search']);
+    this.getUserDetails();
   }
 
   CamelCase(str) {
@@ -41,7 +42,16 @@ export class HomeComponent {
   }
 
   logout() {
-    this.router.navigate(['/login']);
+    // window.location.href='https://login.microsoftonline.com/18a59a81-eea8-4c30-948a-d8824cdc2580';
+
+    this.restApi.logout().subscribe(res => {
+      console.log(res);
+      this.restApi.alertService({
+        msg: 'logout successfully',
+        type: 'alert-error'
+      });
+    })
+
     /*
     this.restApi.logout(this.userId).subscribe(
       data => {
@@ -62,4 +72,16 @@ export class HomeComponent {
   projectDashboard() {
     this.router.navigate(['home/search']);
   }
+
+  getUserDetails() {
+    this.restApi.userDetails().subscribe(res => {
+      console.log(res);
+      this.restApi.alertService({
+        msg: 'Message send successfully',
+        type: 'alert-error'
+      });
+    })
+  }
+
+
 }
