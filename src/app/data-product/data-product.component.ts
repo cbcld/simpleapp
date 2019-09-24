@@ -66,16 +66,10 @@ export class DataProductComponent {
 
   getUserProjectsList() {
     this.projectsData = [
-      { productName: "LC3", updated_date: "Jan 01, 2018", assetType: "Dataset", views: "100" },
-      { productName: "PCP", updated_date: "Jan 02, 2018", assetType: "API", views: "10" },
-      { productName: "Reltio", updated_date: "Jan 02, 2019", assetType: "Tableau Report", views: "60" },
+      { productName: "Task_2019-08-30 13_33_16.json", updated_date: "Jan 01, 2018", assetType: "Dataset", views: "100" },
+      { productName: "delta-PDC-DeliveryStream-8-2019-09-04-17-43-28-68d38e65-1ab8-458d-bd25-1d5dfd2b387b.json", updated_date: "Jan 02, 2018", assetType: "API", views: "10" },
+      { productName: "ashish4", updated_date: "Jan 02, 2019", assetType: "Tableau Report", views: "60" },
       { productName: "LC3", updated_date: "Jan 01, 2019", assetType: "Dataset", views: "70" },
-      { productName: "LC3", updated_date: "Mar 06, 2019", assetType: "API", views: "80" },
-      { productName: "Reltio", updated_date: "Jan 01, 1980", assetType: "API", views: "100" },
-      { productName: "PCP", updated_date: "May 01, 2019", assetType: "Dataset", views: "120" },
-      { productName: "PCP", updated_date: "Jan 01, 1980", assetType: "Dataset", views: "100" },
-      { productName: "PCP", updated_date: "Jan 01, 1980", assetType: "Tableau Report", views: "100" },
-      { productName: "LC3", updated_date: "Jan 01, 1980", assetType: "Dataset", views: "100" },
       { productName: "Reltio", updated_date: "Jan 01, 1980", assetType: "API", views: "100" }];
 
 
