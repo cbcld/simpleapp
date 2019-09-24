@@ -153,7 +153,7 @@ app.get('/api/dataProduct/:assettype', function (req, res) {
             });
             JSON.stringify(file_names);
             console.log(file_names);
-            res.status(202).send(JSON.parse(JSON.stringify(file_names)));
+            res.status(202).send(JSON.stringify(file_names));
 
         } catch (err) {
             console.log(err)
