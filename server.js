@@ -9,7 +9,6 @@ const { gatewayRequest } = require('cirr-gateway-service');
 var Request = require("request");
 var _ = require('lodash');
 const fs = require('fs');
-var pg = require('pg');
 var user = 'C291410'
 var pass = 'Johnwick16'
 var result = [];
