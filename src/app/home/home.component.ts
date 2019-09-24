@@ -34,7 +34,7 @@ export class HomeComponent {
     //this.user = this.restApi.username;
     this.errorMessage = '';
     // this.router.navigate(['home/search']);
-    this.getUserDetails();
+    //this.getUserDetails();
   }
 
   CamelCase(str) {
@@ -73,7 +73,7 @@ export class HomeComponent {
     this.router.navigate(['home/search']);
   }
 
-  getUserDetails() {
+  /*getUserDetails() {
     this.restApi.userDetails().subscribe(res => {
       console.log(res);
       this.restApi.alertService({
@@ -81,7 +81,7 @@ export class HomeComponent {
         type: 'alert-error'
       });
     })
-  }
+  }*/
 
 
 }
