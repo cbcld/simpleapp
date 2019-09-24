@@ -69,12 +69,12 @@ app.post("/api/sendmail", function (req, res) {
 
 })
 
-app.get('/', function (req, res, next) {
+/*app.get('/', function (req, res, next) {
     const user = req.session.passport.user;
     console.log('inside OIDC token');
     console.log(`UserID: ${user.sub}`);
     console.log(`Access token: ${user.access_token}`);
-});
+}); */
 
 app.get('/logout', function (req, res) {
     console.log('inside logout');
@@ -92,7 +92,7 @@ app.get('/logout', function (req, res) {
     });
 });*/
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     const user = req.session.passport.user;
     console.log('inside OIDC token');
     console.log(`UserID: ${user.sub}`);
@@ -100,7 +100,7 @@ app.use((req, res, next) => {
     console.log('token from OIDC is');
 
     next();
-})
+}) */
 
 //app.route('/api/cats/:assettype').get((req, res) => {
 app.get('/api/dataProduct/:assettype', function (req, res) {
